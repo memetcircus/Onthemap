@@ -50,7 +50,7 @@ class OTMClient: NSObject{
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
 
             guard (error == nil) else {
-                let userInfo = [NSLocalizedDescriptionKey : "There was an error with your request: \(error)"]
+                let userInfo = [NSLocalizedDescriptionKey : error!.localizedDescription]
                 completionHandler(result: false, error: NSError(domain: "taskForDeleteMethod", code: 1, userInfo: userInfo))
                 return
             }
@@ -107,7 +107,7 @@ class OTMClient: NSObject{
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             guard (error == nil) else {
-                let userInfo = [NSLocalizedDescriptionKey : "There was an error with your request: \(error)"]
+                let userInfo = [NSLocalizedDescriptionKey : error!.localizedDescription]
                 completionHandler(result: false, error: NSError(domain: "taskForGetMethod", code: 1, userInfo: userInfo))
                 return
             }
@@ -174,7 +174,7 @@ class OTMClient: NSObject{
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
  
             guard (error == nil) else {
-                let userInfo = [NSLocalizedDescriptionKey : "There was an error with your request: \(error)"]
+                let userInfo = [NSLocalizedDescriptionKey : error!.localizedDescription]
                 completionHandler(result: false, error: NSError(domain: "taskForPostMethod", code: 1, userInfo: userInfo))
                 return
             }
@@ -234,7 +234,7 @@ class OTMClient: NSObject{
                 parsedResult = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             }
         } catch {
-            let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
+            let userInfo = [NSLocalizedDescriptionKey : "Could not parse the received data"]
             completionHandler(result: nil, error: NSError(domain: "parseJSONWithCompletionHandler", code: 1, userInfo: userInfo))
         }
         completionHandler(result: parsedResult, error: nil)
