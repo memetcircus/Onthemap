@@ -19,6 +19,7 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var mapAndSummitButton: UIButton!
     @IBOutlet weak var buttonCoverView: UIView!
+    @IBOutlet weak var bodyView: UIView!
     
     var actInd : UIActivityIndicatorView!
     
@@ -176,20 +177,22 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
         actInd  = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50)) as UIActivityIndicatorView
         actInd.center = self.view.center
         actInd.hidesWhenStopped = true
-        actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        actInd.color = UIColor.blueColor()
         view.addSubview(actInd)
     }
     
     func startWaitAnimation(){
         view.userInteractionEnabled = false
+        headerView.alpha = 0.2
+        bodyView.alpha = 0.2
         actInd.startAnimating()
-        view.alpha = 0.5
     }
     
     func stopWaitAnimation(){
-        view.userInteractionEnabled = true
         actInd.stopAnimating()
-        view.alpha = 1
+        headerView.alpha = 1
+        bodyView.alpha = 1
+        view.userInteractionEnabled = true
     }
     
     func showAlertView(message: String){
