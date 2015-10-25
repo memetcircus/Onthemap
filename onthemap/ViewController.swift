@@ -162,8 +162,24 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,UITextFieldDeleg
     func displayError(errorString: String) {
         dispatch_async(dispatch_get_main_queue(), {
                 self.stopWaitAnimation()
+                if errorString == "Invalid Username or Password"{
+                    self.shakeTextField(self.usernameTextField)
+                    self.shakeTextField(self.passwordTextField)
+            }
+                else{
                 self.showAlertView(errorString)
+            }
         })
+    }
+    
+    func shakeTextField(textField : UITextField){
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(textField.center.x - 10, textField.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(textField.center.x + 10, textField.center.y))
+        textField.layer.addAnimation(animation, forKey: "position")
     }
     
     //check internet connection if facebook button is touched
@@ -224,14 +240,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,UITextFieldDeleg
     }
     
     override func viewWillAppear(animated: Bool) {
-//        //block username and password enter if facebook is used
-//        if (fbLoginButton.state.rawValue == 4){
-//            bodyView.alpha = 0.5
-//            bodyView.userInteractionEnabled = false
-//        }else{
-//            bodyView.alpha = 1
-//            bodyView.userInteractionEnabled = true
-//        }
+        
         if (fbLoginButton.state.rawValue == 4){
             if ((FBSDKAccessToken.currentAccessToken()) != nil){
                 FBSDKLoginManager().logOut()
