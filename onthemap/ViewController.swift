@@ -20,9 +20,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,UITextFieldDeleg
     @IBOutlet weak var loginButton: UIButton!
     
     var actInd : UIActivityIndicatorView!
-    
-    var defaults: NSUserDefaults!
-    
+
     enum LAError : Int {
         case AuthenticationFailed
         case UserCancel
@@ -99,9 +97,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,UITextFieldDeleg
             return
         }
         
-        defaults = NSUserDefaults.standardUserDefaults()
-        
-        if let name = defaults.stringForKey(OTMClient.JSONBodyKeys.Username){
+        if let name = NSUserDefaults.standardUserDefaults().stringForKey(OTMClient.JSONBodyKeys.Username){
             if let password = SSKeychain.passwordForService("OnTheMap_Password_Service", account: name){
                 if self.hasConnectivity(){
                     startTouchIDOperation(name, password: String(password))
@@ -145,7 +141,8 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,UITextFieldDeleg
             self.stopWaitAnimation()
 
             if (!touchID && !facebook){
-                self.defaults.setObject(self.usernameTextField.text!, forKey: OTMClient.JSONBodyKeys.Username)
+               
+                NSUserDefaults.standardUserDefaults().setObject(self.usernameTextField.text, forKey: OTMClient.JSONBodyKeys.Username)
                 NSUserDefaults.standardUserDefaults().synchronize()
                 SSKeychain.setPassword(self.passwordTextField.text!, forService: "OnTheMap_Password_Service", account: self.usernameTextField.text!)
             }
