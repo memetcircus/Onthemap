@@ -241,6 +241,7 @@ extension OTMClient{
             } else {
                 if let results = JSONResult[OTMClient.JSONResponseKeys.results] as? [[String:AnyObject]]{
                     let students = OTMStudent.studentsFromResults(results)
+                    OTMClient.sharedInstance().students = students
                     completionHandler(result: students, error: nil)
                 }
                 else{

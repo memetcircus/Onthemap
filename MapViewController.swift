@@ -13,7 +13,6 @@ import FBSDKLoginKit
 
 class MapViewController: UIViewController, MKMapViewDelegate{
     
-    var currentStudents = [OTMStudent]()
     var actInd : UIActivityIndicatorView!
     var logoutButton: UIBarButtonItem!
     
@@ -25,7 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         
         OTMClient.sharedInstance().getStudentLocations { (students, error) -> Void in
             if let students = students as [OTMStudent]!{
-                self.currentStudents = students
+                OTMClient.sharedInstance().students = students
                 dispatch_async(dispatch_get_main_queue()) {
                     self.stopWaitAnimation()
                     self.addAnnotationsToMap()
@@ -44,7 +43,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     {
         var annotations = [MKPointAnnotation]()
         
-        for student in currentStudents {
+        for student in OTMClient.sharedInstance().students! {
             
             let lat = CLLocationDegrees(student.latitude)
             let long = CLLocationDegrees(student.longtitude)
@@ -112,7 +111,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         
         OTMClient.sharedInstance().getStudentLocations { (students, error) -> Void in
             if let students = students{
-                self.currentStudents = students
+                OTMClient.sharedInstance().students = students
                 dispatch_async(dispatch_get_main_queue()) {
                     self.stopWaitAnimation()
                     self.addAnnotationsToMap()
@@ -136,15 +135,15 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         actInd  = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50)) as UIActivityIndicatorView
         actInd.center = self.view.center
         actInd.hidesWhenStopped = true
-        actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        actInd.color = UIColor.blueColor()
         view.addSubview(actInd)
     }
     
     func startWaitAnimation(){
         view.userInteractionEnabled = false
-        actInd.startAnimating()
         MapView.alpha = 0.1
         logoutButton.enabled = false
+        actInd.startAnimating()
     }
     
     func stopWaitAnimation(){

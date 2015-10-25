@@ -12,8 +12,6 @@ import FBSDKLoginKit
 
 class ListViewController: UIViewController{
     
-    var students : [OTMStudent] = [OTMStudent]()
-    
     var actInd : UIActivityIndicatorView!
     
     @IBOutlet weak var studentsTableView: UITableView!
@@ -66,8 +64,8 @@ class ListViewController: UIViewController{
     func refreshButtonTouchUp() {
         startWaitAnimation()
         OTMClient.sharedInstance().getStudentLocations { (students, error) -> Void in
-            if let students = students{
-                self.students = students
+            if let students = students {
+                OTMClient.sharedInstance().students = students
                 dispatch_async(dispatch_get_main_queue()) {
                     self.studentsTableView.reloadData()
                     self.stopWaitAnimation()
@@ -92,7 +90,7 @@ class ListViewController: UIViewController{
         startWaitAnimation()
         OTMClient.sharedInstance().getStudentLocations { (students, error) -> Void in
             if let students = students{
-                self.students = students
+                OTMClient.sharedInstance().students = students
                 dispatch_async(dispatch_get_main_queue()) {
                     self.studentsTableView.reloadData()
                     self.stopWaitAnimation()
@@ -117,15 +115,15 @@ class ListViewController: UIViewController{
         actInd  = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50)) as UIActivityIndicatorView
         actInd.center = self.view.center
         actInd.hidesWhenStopped = true
-        actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        actInd.color = UIColor.blueColor()
         view.addSubview(actInd)
     }
     
     func startWaitAnimation(){
         view.userInteractionEnabled = false
-        actInd.startAnimating()
         studentsTableView.alpha = 0.5
         logoutButton.enabled = false
+        actInd.startAnimating()
     }
     
     func stopWaitAnimation(){
@@ -141,7 +139,7 @@ extension ListViewController:UITableViewDelegate, UITableViewDataSource{
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cellReuseIdentifier = "StudentsTableViewCell"
-        let student = students[indexPath.row]
+        let student = OTMClient.sharedInstance().students![indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as UITableViewCell!
         
         cell.textLabel!.text = student.firstName  + " " + student.lastName
@@ -152,7 +150,7 @@ extension ListViewController:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let student = students[indexPath.row]
+        let student = OTMClient.sharedInstance().students![indexPath.row]
       
         if !UIApplication.sharedApplication().openURL(NSURL(string: student.mediaURL)!) {
             showAlertView("Invalid Link")
@@ -164,7 +162,7 @@ extension ListViewController:UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return OTMClient.sharedInstance().students!.count
     }
 
 }
