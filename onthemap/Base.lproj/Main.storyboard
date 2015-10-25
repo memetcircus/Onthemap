@@ -564,8 +564,9 @@ today?</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.18431372549019609" green="0.36470588235294116" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                            <rect key="frame" x="125" y="46" width="153" height="91"/>
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Te-dd-tIW">
@@ -615,6 +616,30 @@ today?</string>
                                             <rect key="frame" x="8" y="55" width="384" height="98"/>
                                         </variation>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n15-jS-0lk">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="C45-By-sUn"/>
+                                            <constraint firstAttribute="width" constant="90" id="vK2-MD-w8R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Check Link"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="C45-By-sUn"/>
+                                                <exclude reference="vK2-MD-w8R"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="C45-By-sUn"/>
+                                                <include reference="vK2-MD-w8R"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="checkLinkTouchUp:" destination="aBi-cA-Pa1" eventType="touchUpInside" id="fXT-BX-lxt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84313725490196079" green="0.84705882352941175" blue="0.83137254901960789" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -622,6 +647,9 @@ today?</string>
                                         <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="j50-O0-ypv" secondAttribute="trailing" constant="8" id="7ao-Sg-nPt"/>
+                                    <constraint firstItem="n15-jS-0lk" firstAttribute="leading" secondItem="uuW-5W-L1Q" secondAttribute="leading" constant="8" id="Ca2-BX-bbM">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="3Te-dd-tIW" secondAttribute="trailing" constant="15" id="Lkt-m3-mbd"/>
                                     <constraint firstItem="S4F-f3-wvb" firstAttribute="centerX" secondItem="uuW-5W-L1Q" secondAttribute="centerX" id="Pjj-tF-KeL">
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -632,24 +660,28 @@ today?</string>
                                     <constraint firstAttribute="width" secondItem="uuW-5W-L1Q" secondAttribute="height" multiplier="50:20" id="gvg-jD-Ocj"/>
                                     <constraint firstItem="3Te-dd-tIW" firstAttribute="top" secondItem="uuW-5W-L1Q" secondAttribute="top" constant="20" id="gwk-Vp-veC"/>
                                     <constraint firstItem="j50-O0-ypv" firstAttribute="top" secondItem="uuW-5W-L1Q" secondAttribute="top" constant="54.5" id="po2-A1-BdF"/>
+                                    <constraint firstItem="n15-jS-0lk" firstAttribute="top" secondItem="uuW-5W-L1Q" secondAttribute="top" constant="20" id="ru2-kB-ZkC"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="S4F-f3-wvb"/>
                                         <exclude reference="3Te-dd-tIW"/>
                                         <exclude reference="j50-O0-ypv"/>
+                                        <exclude reference="n15-jS-0lk"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="SIY-3V-Zvx"/>
                                         <exclude reference="gvg-jD-Ocj"/>
-                                        <exclude reference="Lkt-m3-mbd"/>
-                                        <exclude reference="gwk-Vp-veC"/>
-                                        <exclude reference="0Fe-hH-vYc"/>
-                                        <exclude reference="Pjj-tF-KeL"/>
+                                        <exclude reference="Ca2-BX-bbM"/>
+                                        <exclude reference="ru2-kB-ZkC"/>
                                         <exclude reference="7ao-Sg-nPt"/>
                                         <exclude reference="QVm-Pi-KSS"/>
                                         <exclude reference="cbe-J4-Zdf"/>
                                         <exclude reference="po2-A1-BdF"/>
+                                        <exclude reference="0Fe-hH-vYc"/>
+                                        <exclude reference="Pjj-tF-KeL"/>
+                                        <exclude reference="Lkt-m3-mbd"/>
+                                        <exclude reference="gwk-Vp-veC"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -657,18 +689,21 @@ today?</string>
                                         <include reference="S4F-f3-wvb"/>
                                         <include reference="3Te-dd-tIW"/>
                                         <include reference="j50-O0-ypv"/>
+                                        <include reference="n15-jS-0lk"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="SIY-3V-Zvx"/>
                                         <exclude reference="gvg-jD-Ocj"/>
-                                        <include reference="Lkt-m3-mbd"/>
-                                        <include reference="gwk-Vp-veC"/>
-                                        <include reference="0Fe-hH-vYc"/>
-                                        <include reference="Pjj-tF-KeL"/>
+                                        <include reference="Ca2-BX-bbM"/>
+                                        <include reference="ru2-kB-ZkC"/>
                                         <include reference="7ao-Sg-nPt"/>
                                         <include reference="QVm-Pi-KSS"/>
                                         <include reference="cbe-J4-Zdf"/>
                                         <include reference="po2-A1-BdF"/>
+                                        <include reference="0Fe-hH-vYc"/>
+                                        <include reference="Pjj-tF-KeL"/>
+                                        <include reference="Lkt-m3-mbd"/>
+                                        <include reference="gwk-Vp-veC"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -894,6 +929,7 @@ today?</string>
                         <outlet property="bodyView" destination="kJ3-fc-2C4" id="HJR-ao-et4"/>
                         <outlet property="buttonCoverView" destination="6yA-40-31X" id="RDL-Kw-ELN"/>
                         <outlet property="cancelButton" destination="3Te-dd-tIW" id="885-IQ-ahw"/>
+                        <outlet property="checkLinkButton" destination="n15-jS-0lk" id="u59-yU-lqZ"/>
                         <outlet property="headerPrompt" destination="S4F-f3-wvb" id="nUS-oj-bNZ"/>
                         <outlet property="headerView" destination="uuW-5W-L1Q" id="9qL-Pv-Enf"/>
                         <outlet property="linkTextView" destination="j50-O0-ypv" id="vts-iC-MGe"/>

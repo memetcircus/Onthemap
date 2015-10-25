@@ -14,6 +14,7 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var checkLinkButton: UIButton!
     @IBOutlet weak var headerPrompt: UILabel!
     @IBOutlet weak var locationTextView: UITextView!
     @IBOutlet weak var MapView: MKMapView!
@@ -135,6 +136,25 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
         return true
     }
     
+    @IBAction func checkLinkTouchUp(sender: UIButton) {
+        if linkTextView.text == "Enter a Link to Share Here"{
+            self.showAlertViewReverseCancelBtnColor("Must Enter a Link")
+            return
+        }
+        
+        if !(linkTextView.text.containsString("http://") || linkTextView.text.containsString("https://")){
+            self.showAlertViewReverseCancelBtnColor("Invalid Link. Include HTTP(S)://")
+            return
+        }
+        
+        self.checkLinkButton.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        if(UIApplication.sharedApplication().openURL(NSURL(string: linkTextView.text)!)){
+            checkLinkButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), forState: UIControlState.Normal)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -153,6 +173,8 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
         MapView.alpha = 0
         linkTextView.userInteractionEnabled = false
         linkTextView.alpha = 0
+        checkLinkButton.userInteractionEnabled = false
+        checkLinkButton.alpha = 0
     }
     
     @IBAction func cancelButtonTouchUp(sender: AnyObject) {
@@ -168,8 +190,11 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
         MapView.userInteractionEnabled = true
         linkTextView.userInteractionEnabled = true
         linkTextView.alpha = 1
+        checkLinkButton.userInteractionEnabled = true
+        checkLinkButton.alpha = 1
         headerPrompt.alpha = 0
         headerView.backgroundColor = UIColor(red: 0x40/255.0, green: 0x74/255.0, blue: 0xA7/255.0, alpha: 0xFF/255.0)
+        checkLinkButton.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         cancelButton.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
@@ -204,7 +229,8 @@ class InfoPostViewController: UIViewController,UITextViewDelegate, MKMapViewDele
     func showAlertViewReverseCancelBtnColor(message: String){
         let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default){ UIAlertAction in
-            cancelButton.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            self.checkLinkButton.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            self.cancelButton.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
             })
         self.presentViewController(alert, animated: true, completion: nil)
     }
