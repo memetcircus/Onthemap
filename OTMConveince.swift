@@ -232,7 +232,9 @@ extension OTMClient{
     
     func getStudentLocations(completionHandler: (result: [OTMStudent]?, error: NSError?) -> Void){
         
-        let parameters = [OTMClient.ParameterKeys.Limit : "100"]
+        let parameters = [OTMClient.ParameterKeys.Limit : "100",
+            OTMClient.ParameterKeys.Order : "-updatedAt"
+        ]
         
         taskForGETMethod(Methods.ParseClassesStudentLocation, parameters: parameters) { JSONResult, error in
             
