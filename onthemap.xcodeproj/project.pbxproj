@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40002BC1BCBF0A300C6F215 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40002BB1BCBF0A300C6F215 /* Reachability.swift */; settings = {ASSET_TAGS = (); }; };
+		F40986701BD25561001B33E0 /* OTMStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409866F1BD25561001B33E0 /* OTMStudent.swift */; settings = {ASSET_TAGS = (); }; };
 		F42BB7651BCBB21600819076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BB7641BCBB21600819076 /* AppDelegate.swift */; };
 		F42BB7671BCBB21600819076 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BB7661BCBB21600819076 /* ViewController.swift */; };
 		F42BB76A1BCBB21600819076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42BB7681BCBB21600819076 /* Main.storyboard */; };
@@ -15,6 +17,17 @@
 		F42BB7721BCBB21600819076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42BB7701BCBB21600819076 /* LaunchScreen.storyboard */; };
 		F42BB77D1BCBB21600819076 /* onthemapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BB77C1BCBB21600819076 /* onthemapTests.swift */; };
 		F42BB7881BCBB21600819076 /* onthemapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BB7871BCBB21600819076 /* onthemapUITests.swift */; };
+		F4478E281BCE2B2B00AC4FBC /* OTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478E271BCE2B2B00AC4FBC /* OTMClient.swift */; settings = {ASSET_TAGS = (); }; };
+		F4478E2A1BCE2B4500AC4FBC /* OTMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478E291BCE2B4500AC4FBC /* OTMConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		F4478E2C1BCE4A6300AC4FBC /* OTMConveince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4478E2B1BCE4A6300AC4FBC /* OTMConveince.swift */; settings = {ASSET_TAGS = (); }; };
+		F488DFFE1BD3E59A00533E42 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488DFFD1BD3E59A00533E42 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F488E0001BD41FBF00533E42 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488DFFF1BD41FBF00533E42 /* ListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F488E0021BD5736000533E42 /* InfoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488E0011BD5736000533E42 /* InfoPostViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F4B95FDC1BDD36B9009C562B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B95FDB1BDD36B9009C562B /* FBSDKCoreKit.framework */; };
+		F4B95FDE1BDD36C3009C562B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B95FDD1BDD36C3009C562B /* FBSDKLoginKit.framework */; };
+		F4E0C6631BDA5A31009C1666 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E0C6621BDA5A31009C1666 /* LocalAuthentication.framework */; };
+		F4E0C6651BDA7065009C1666 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E0C6641BDA7065009C1666 /* Security.framework */; };
+		F4E0C6691BDA7204009C1666 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C6681BDA7204009C1666 /* SSKeychain.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40002BB1BCBF0A300C6F215 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../Reachability.swift; sourceTree = "<group>"; };
+		F409866F1BD25561001B33E0 /* OTMStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMStudent.swift; sourceTree = "<group>"; };
 		F42BB7611BCBB21600819076 /* onthemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onthemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42BB7641BCBB21600819076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F42BB7661BCBB21600819076 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F42BB7661BCBB21600819076 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = onthemap/ViewController.swift; sourceTree = "<group>"; };
 		F42BB7691BCBB21600819076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F42BB76C1BCBB21600819076 /* onthemap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = onthemap.xcdatamodel; sourceTree = "<group>"; };
 		F42BB76E1BCBB21600819076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +64,19 @@
 		F42BB7831BCBB21600819076 /* onthemapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = onthemapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42BB7871BCBB21600819076 /* onthemapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onthemapUITests.swift; sourceTree = "<group>"; };
 		F42BB7891BCBB21600819076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4478E271BCE2B2B00AC4FBC /* OTMClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMClient.swift; sourceTree = "<group>"; };
+		F4478E291BCE2B4500AC4FBC /* OTMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMConstants.swift; sourceTree = "<group>"; };
+		F4478E2B1BCE4A6300AC4FBC /* OTMConveince.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMConveince.swift; sourceTree = "<group>"; };
+		F488DFFD1BD3E59A00533E42 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F488DFFF1BD41FBF00533E42 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		F488E0011BD5736000533E42 /* InfoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostViewController.swift; sourceTree = "<group>"; };
+		F4B95FDB1BDD36B9009C562B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F4B95FDD1BDD36C3009C562B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F4E0C6621BDA5A31009C1666 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		F4E0C6641BDA7065009C1666 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F4E0C6661BDA71E0009C1666 /* SSKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = ../SSKeychain.h; sourceTree = "<group>"; };
+		F4E0C6671BDA7203009C1666 /* onthemap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "onthemap-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F4E0C6681BDA7204009C1666 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = ../SSKeychain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B95FDE1BDD36C3009C562B /* FBSDKLoginKit.framework in Frameworks */,
+				F4B95FDC1BDD36B9009C562B /* FBSDKCoreKit.framework in Frameworks */,
+				F4E0C6651BDA7065009C1666 /* Security.framework in Frameworks */,
+				F4E0C6631BDA5A31009C1666 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,10 +108,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F40002C11BCBF28A00C6F215 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4B95FDD1BDD36C3009C562B /* FBSDKLoginKit.framework */,
+				F4B95FDB1BDD36B9009C562B /* FBSDKCoreKit.framework */,
+				F4E0C6641BDA7065009C1666 /* Security.framework */,
+				F4E0C6621BDA5A31009C1666 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F41F52B81BD9666900DE260B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0C6671BDA7203009C1666 /* onthemap-Bridging-Header.h */,
+				F4E0C6681BDA7204009C1666 /* SSKeychain.m */,
+				F4E0C6661BDA71E0009C1666 /* SSKeychain.h */,
+				F40002BB1BCBF0A300C6F215 /* Reachability.swift */,
+			);
+			name = Resources;
+			path = onthemap;
+			sourceTree = "<group>";
+		};
+		F41F52B91BD9669600DE260B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F42BB7661BCBB21600819076 /* ViewController.swift */,
+				F488E0011BD5736000533E42 /* InfoPostViewController.swift */,
+				F488DFFF1BD41FBF00533E42 /* ListViewController.swift */,
+				F488DFFD1BD3E59A00533E42 /* MapViewController.swift */,
+			);
+			name = Controllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F41F52BA1BD966AC00DE260B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F409866F1BD25561001B33E0 /* OTMStudent.swift */,
+				F4478E2B1BCE4A6300AC4FBC /* OTMConveince.swift */,
+				F4478E291BCE2B4500AC4FBC /* OTMConstants.swift */,
+				F4478E271BCE2B2B00AC4FBC /* OTMClient.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		F42BB7581BCBB21600819076 = {
 			isa = PBXGroup;
 			children = (
 				F42BB7631BCBB21600819076 /* onthemap */,
+				F41F52B81BD9666900DE260B /* Resources */,
+				F40002C11BCBF28A00C6F215 /* Frameworks */,
 				F42BB77B1BCBB21600819076 /* onthemapTests */,
 				F42BB7861BCBB21600819076 /* onthemapUITests */,
 				F42BB7621BCBB21600819076 /* Products */,
@@ -99,13 +180,14 @@
 		F42BB7631BCBB21600819076 /* onthemap */ = {
 			isa = PBXGroup;
 			children = (
+				F41F52BA1BD966AC00DE260B /* Model */,
+				F41F52B91BD9669600DE260B /* Controllers */,
 				F42BB7641BCBB21600819076 /* AppDelegate.swift */,
-				F42BB7661BCBB21600819076 /* ViewController.swift */,
 				F42BB7681BCBB21600819076 /* Main.storyboard */,
 				F42BB76E1BCBB21600819076 /* Assets.xcassets */,
+				F42BB76B1BCBB21600819076 /* onthemap.xcdatamodeld */,
 				F42BB7701BCBB21600819076 /* LaunchScreen.storyboard */,
 				F42BB7731BCBB21600819076 /* Info.plist */,
-				F42BB76B1BCBB21600819076 /* onthemap.xcdatamodeld */,
 			);
 			path = onthemap;
 			sourceTree = "<group>";
@@ -190,6 +272,7 @@
 		F42BB7591BCBB21600819076 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = memetcircus;
 				TargetAttributes = {
@@ -258,8 +341,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4478E2A1BCE2B4500AC4FBC /* OTMConstants.swift in Sources */,
+				F4478E2C1BCE4A6300AC4FBC /* OTMConveince.swift in Sources */,
+				F40986701BD25561001B33E0 /* OTMStudent.swift in Sources */,
 				F42BB7671BCBB21600819076 /* ViewController.swift in Sources */,
+				F488DFFE1BD3E59A00533E42 /* MapViewController.swift in Sources */,
+				F4E0C6691BDA7204009C1666 /* SSKeychain.m in Sources */,
 				F42BB76D1BCBB21600819076 /* onthemap.xcdatamodeld in Sources */,
+				F4478E281BCE2B2B00AC4FBC /* OTMClient.swift in Sources */,
+				F40002BC1BCBF0A300C6F215 /* Reachability.swift in Sources */,
+				F488E0021BD5736000533E42 /* InfoPostViewController.swift in Sources */,
+				F488E0001BD41FBF00533E42 /* ListViewController.swift in Sources */,
 				F42BB7651BCBB21600819076 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,9 +411,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -363,9 +456,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -400,10 +494,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = onthemap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.memetcircus.onthemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "onthemap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -411,10 +515,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = onthemap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.memetcircus.onthemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "onthemap-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -485,6 +598,7 @@
 				F42BB78E1BCBB21600819076 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F42BB78F1BCBB21600819076 /* Build configuration list for PBXNativeTarget "onthemapTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +607,7 @@
 				F42BB7911BCBB21600819076 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F42BB7921BCBB21600819076 /* Build configuration list for PBXNativeTarget "onthemapUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +616,7 @@
 				F42BB7941BCBB21600819076 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
