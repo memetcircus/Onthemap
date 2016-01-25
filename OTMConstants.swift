@@ -10,11 +10,11 @@ extension OTMClient{
     
     struct Constants{
         //facebook
-        static let AppID : String = "365362206864879"
+        static let AppID : String = "ABCDEFG"
         
         //parse
-        static let ParseAppID : String = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
-        static let ApiKey : String = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
+        static let ParseAppID : String = "ABCDEFG"
+        static let ApiKey : String = "ABCDEFG"
         static let ParseBaseURL : String = "https://api.parse.com/1/"
         
         //udacity
