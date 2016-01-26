@@ -32,7 +32,11 @@ When the user clicks on the “Find on the Map” button, the app forwards geoco
 If the forward geocode succeeds then the prompt, text field, and button gets hidden, and a map showing the entered location is displayed. A new text field allows users to paste or type in the link that they would like to be associated with their location. A new button is displayed allowing the user to submit their data. If the link is empty, the app displays an alert view notifying the user.  
 If the submission fails to post the data to the server, then the user sees an alert with an error message describing the failure.  
 If at any point the user clicks on the “Cancel” button, then the **Information Posting View** is dismissed, returning the app to the **Map and Table Tabbed View**.  
- if the submission succeeds, then the **Information Posting View** is dismissed, returning the app to the **Map and Table Tabbed View**.
+ if the submission succeeds, then the **Information Posting View** is dismissed, returning the app to the **Map and Table Tabbed View**.  
+####Licence  
+
+Onthemap created by Mehmet Akif Acar on October 12, 2015.
+Copyright © 2015 Mehmet Akif Acar, www.memetcircus.com. All rights reserved.
 
 
 
